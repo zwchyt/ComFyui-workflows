@@ -1,20 +1,22 @@
-##:fa-bookmark: Z-Image 工作流（中文｜English）
+Z-Image 工作流（中文｜English）
+=
 
 一个专为“文生图”打造的一键式高质量人像图像工作流
 A one-click high-quality portrait image enhancement workflow based on Z-Image-Turbo + SeedVR2 Upscaler.
 
-功能亮点 | Features
+功能 | Features
 
 | 功能 | 说明 |
 |------|------|
-| prompt-assistant (智谱)-自动反推中文 Tag | 上传任意人像图 → 自动生成中文提示词 |
+| prompt-assistant (智谱/百度) | 上传任意人像图 → 自动反推中英文 Tag |
 | Z-Image-Turbo（fp8 / bf16）极快初代 | 4步极速生成 1080p 级人像，保留完美面部细节 |
-| SeedVR2 图像超分 | 支持单张超分（真实电影感） |
+| SeedVR2 图像超分率 | 支持单张超分（真实电影感） |
 | Hires-Fix + 4x-UltraSharp 最终精修 | 30% 上采 + 最锐细节恢复 |
-| 一键清理显存节点 | 防止爆显存，显存占用峰值仅 ≈7.6G（RTX 4060） |
-| 完整输出对比（Image Comparer） | 实时滑动对比原图 vs 最终结果 |
+| ComfyUI-Easy-Use 一键清理显存节点 | 防止爆显存，显存占用峰值仅） |
+| rgthree-comfy 完整输出对比（Image Comparer） | 实时滑动对比原图 vs 最终结果 |
 
-##:fa-check-circle: 所需模型（请手动放入对应文件夹）| Required Models
+所需模型（请手动放入对应文件夹）| Required Models
+=
 
 | 节点 | 文件名 | 放置路径 | 下载链接（建议使用） |
 |------|--------|----------|---------------------|
@@ -25,8 +27,10 @@ A one-click high-quality portrait image enhancement workflow based on Z-Image-Tu
 | SeedVR2 VAE Model | `ema_vae_fp16.safetensors` | `ComfyUI\models\SEEDVR2\` | https://huggingface.co/numz/SeedVR2_comfyUI/blob/main/ema_vae_fp16.safetensors |
 | 任意超分模型 | `4x-UltraSharp.pth` | `ComfyUI\models\upscale_models\` | https://huggingface.co/lokCX/4x-Ultrasharp/blob/main/4x-UltraSharp.pth|
 
-##:fa-check-circle: 必装自定义节点（强烈建议使用 ComfyUI-Manager 一键安装）Required Custom Nodes
-### :fa-arrow-circle-o-down:安装方法
+必装自定义节点（强烈建议使用 ComfyUI-Manager 一键安装）Required Custom Nodes
+=
+安装方法
+-
 
 打开 ComfyUI → Manager  → 搜索插件名 → Install → 重启 ComfyUI 即可。
 
@@ -41,7 +45,8 @@ A one-click high-quality portrait image enhancement workflow based on Z-Image-Tu
 | ComfyUI-Impact-Pack | https://github.com/ltdrdata/ComfyUI-Impact-Pack | `更多高级功能`|可选|
 
 
-### :fa-arrow-circle-o-down:工作流使用方法 | How to Use
+工作流使用方法 | How to Use
+=
 
 1. **将本仓库中的 `z-image.json` 拖入 ComfyUI 界面**
 2. **第一次运行会自动提示缺失模型(`如果你前面安装全部完成的话`)，按提示下载或手动放入对应目录**
@@ -49,7 +54,8 @@ A one-click high-quality portrait image enhancement workflow based on Z-Image-Tu
 4. **修改右侧提示词`或`直接使用自动反推的中文 Tag**
 5. **生成图片结果自动保存在 `ComfyUI\output\`文件内**
 
-### :fa-check-square-o: 推荐参数（已预设，可自行微调）
+推荐参数（已预设，可自行微调）
+----
 
 - 初代步骤：仅 4-8 步（极快）
 - SeedVR2 分辨率：1080（可改 1440/4K，但显存会显著上升）
@@ -57,13 +63,17 @@ A one-click high-quality portrait image enhancement workflow based on Z-Image-Tu
 - Color Correction：Lab（最自然色彩）
 
 示例效果 | Samples
+
+工作流演示
+
+![image](https://github.com/zwchyt/ComFyui-workflows/blob/main/Z-image.png)
+
 | 原图 | 最终输出 `1920x1080` +`4步` + `dempp_2m_sde`+`sgm_uniform`|
-https://github.com/zwchyt/ComFyui-workflows/blob/main/z-image.png
 
-Star & Share
+![image](https://github.com/zwchyt/ComFyui-workflows/blob/main/z-image.png)
 
-觉得好用请给仓库点个 Star ★，您的鼓励是我持续更新的最大动力！
-欢迎提交自己优化后的版本或生成的惊艳案例～
+Star
 
+觉得好用请给仓库点个 Star ★，您的鼓励是我持续更新的最大动力！欢迎提交自己优化后的版本或生成的惊艳案例～
 最后更新：2025.12.03
 许可证：（模型版权归原作者所有，仅工作流开源）
